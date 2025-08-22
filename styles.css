@@ -1,0 +1,52 @@
+@keyframes shake {
+  0%,
+  to {
+    transform: translate(0);
+  }
+
+  25% {
+    transform: translate(-5px);
+  }
+
+  75% {
+    transform: translate(5px);
+  }
+}
+
+.container {
+  width: 50vh;
+  max-width: 400px;
+  height: 400px;
+  margin: 100px auto;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.label {
+  display: block;
+}
+#phone {
+  outline: none;
+  width: 80%;
+  height: 30px;
+}
+.wrong {
+  animation: shake 0.3s ease-in-out 1;
+}
+
+.green {
+  border-color: chartreuse;
+}
+
+.red {
+  border-color: red;
+}
+
+.error-msg {
+  /* width: 90%;
+    height: 30px; */
+  color: red;
+}

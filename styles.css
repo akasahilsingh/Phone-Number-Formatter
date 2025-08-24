@@ -13,40 +13,73 @@
   }
 }
 
+body {
+  font-family: "Roboto", sans-serif;
+}
+
 .container {
-  width: 50vh;
   max-width: 400px;
-  height: 400px;
+  height: auto;
   margin: 100px auto;
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
+  padding: 30px;
 }
 
-.label {
-  display: block;
+.form-container {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
+
+.phone-icon {
+  position: absolute;
+  right: 3rem;
+  opacity: 0.7;
+  pointer-events: none;
+  transition: all 0.3s ease-in;
+}
+
 #phone {
+  width: 90%;
+  height: 40px;
+  display: block;
+  transition: border 0.3s ease-in-out;
+  border-radius: 5px;
+  border: 1px solid #e2e8f0;
   outline: none;
-  width: 80%;
-  height: 30px;
 }
+
+#phone:focus {
+  border: 1px solid #2563eb;
+}
+
+#phone:focus + .phone-icon {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+#phone.typing {
+  border-color: #dc2626;
+}
+
 .wrong {
   animation: shake 0.3s ease-in-out 1;
 }
 
-.green {
-  border-color: chartreuse;
-}
-
-.red {
-  border-color: red;
+#phone.green {
+  border-color: #16a34a;
 }
 
 .error-msg {
-  /* width: 90%;
-    height: 30px; */
-  color: red;
+  font-size: 14px;
+  color: #dc2626;
+}
+
+.hint {
+  font-size: 14px;
+  color: #555;
 }

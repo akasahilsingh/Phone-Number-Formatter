@@ -8,12 +8,13 @@ phone.addEventListener("input", () => {
 
   if (phone.value.replace(/\D/g, "").length < 10) {
     phone.classList.add("wrong");
+    phone.classList.add("typing");
     setTimeout(() => {
       phone.classList.remove("wrong");
     }, 500);
     phone.classList.add("red");
+    phone.classList.remove("green");
     errorMsg.innerText = "Please enter a valid 10-digit phone number";
-    console.log("re");
   } else {
     phone.classList.remove("red");
     phone.classList.add("green");
